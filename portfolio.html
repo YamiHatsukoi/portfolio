@@ -73,20 +73,37 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar mục lục -->
-  <nav id="sidebar" class="col-md-3 col-lg-2 bg-white sidebar position-fixed vh-100" style="border-right:1px solid #eee; box-shadow:0 2px 12px rgba(52,152,219,0.04); left:0; top:0; transition:left 0.3s;">
-        <div class="sidebar-sticky pt-4">
-          <h4 class="text-center" style="color:#3498db; font-weight:700;">Mục lục <button id="closeSidebar" class="btn btn-sm btn-light float-end d-md-none"><i class="fa-solid fa-xmark"></i></button></h4>
-          <ul class="nav flex-column mt-4">
-            <li class="nav-item mb-2"><a class="nav-link" href="#gioithieu"><i class="fa-solid fa-user"></i> Giới thiệu</a></li>
-            <li class="nav-item mb-2"><a class="nav-link" href="#project1"><i class="fa-solid fa-gamepad"></i> WhiteFlame</a></li>
-            <li class="nav-item mb-2"><a class="nav-link" href="#project2"><i class="fa-solid fa-gamepad"></i> OverBlue</a></li>
-            <li class="nav-item mb-2"><a class="nav-link" href="#project3"><i class="fa-solid fa-gamepad"></i> MixiShow</a></li>
-            
-            <!-- Thêm các mục khác tại đây -->
-          </ul>
-          <a href="index.html" class="btn btn-outline-primary mt-4 w-100"><i class="fa-solid fa-arrow-left"></i> Quay về CV</a>
-        </div>
-      </nav>
+  <nav id="sidebar" class="col-md-3 col-lg-2 bg-white sidebar position-fixed vh-100 overflow-auto" style="border-right:1px solid #eee; box-shadow:0 2px 12px rgba(52,152,219,0.04); left:0; top:0; transition:left 0.3s;">
+    <div class="sidebar-sticky pt-4">
+      <h4 class="text-center" style="color:#3498db; font-weight:700;">Mục lục <button id="closeSidebar" class="btn btn-sm btn-light float-end d-md-none"><i class="fa-solid fa-xmark"></i></button></h4>
+      <ul class="nav flex-column mt-3" style="gap: 2px;"></ul>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#002c31;font-size:1rem;text-decoration:underline;text-underline-offset:4px;font-weight:600;" href="#gioithieu">
+        <i class="fa-solid fa-user"></i> <span style="margin-left:7px;">Các dự án nổi bật</span>
+          </a>
+        </li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project1"><i class="fa-solid fa-fire-flame-curved"></i> <span style="margin-left:7px;">WhiteFlame</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project2"><i class="fa-solid fa-water"></i> <span style="margin-left:7px;">OverBlue</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project3"><i class="fa-solid fa-tv"></i> <span style="margin-left:7px;">MixiShow</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project4"><i class="fa-solid fa-user-astronaut"></i> <span style="margin-left:7px;">Avatar Life World</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project5"><i class="fa-solid fa-couch"></i> <span style="margin-left:7px;">Sweet Room 3D</span></a></li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#002c31;font-size:1rem;text-decoration:underline;text-underline-offset:4px;font-weight:600;" href="#gioithieu2">
+        <i class="fa-solid fa-user"></i> <span style="margin-left:7px;">Những dự án khác</span>
+          </a>
+        </li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#OldFlame"><i class="fa-solid fa-fire"></i> <span style="margin-left:7px;">OldFlame</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#GoUp"><i class="fa-solid fa-arrow-up"></i> <span style="margin-left:7px;">Go Up 3D</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#DOP"><i class="fa-solid fa-eraser"></i> <span style="margin-left:7px;">DOP Ban</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#DressUp"><i class="fa-solid fa-shirt"></i> <span style="margin-left:7px;">Fashion Stylish</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Cat"><i class="fa-solid fa-cat"></i> <span style="margin-left:7px;">Cat Run</span></a></li>
+        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Fish"><i class="fa-solid fa-fish"></i> <span style="margin-left:7px;">Super Fish.IO</span></a></li>
+      </ul>
+        <!-- Thêm các mục khác tại đây -->
+      </ul>
+      <a href="index.html" class="btn btn-outline-primary mt-4 w-100"><i class="fa-solid fa-arrow-left"></i> Quay về CV</a>
+    </div>
+  </nav>
       <!-- Nội dung portfolio -->
       <main class="col-md-9 col-lg-10 offset-md-3 offset-lg-2">
         <div class="portfolio-container">
@@ -225,7 +242,355 @@
               </div>
           </div>
           <p>&nbsp;</p>
+        <!-- Avatar -->
+           <div class="project-card p-4 mb-3 bg-dark" id="project4">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Avatar Life World: My Story
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <img src="img/Avatar1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Avatar7.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Avatar3.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Avatar4.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Avatar5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Avatar6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Một trò chơi mở với rất nhiều tính năng và sân chơi bên trong. Bao gồm rất nhiều animation, tương tác đồ vật, thay đổi giữa hàng trăm trang phục, tự mua và sắp xếp đồ đạc bên trong nhà...</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Là một trong hai Developer chính của game, phụ trách lập trình các tính năng tương tác animation, thay đổi trang phục, và xử lý logic UI, service.</li>
+                    <li style="margin-bottom:8px;">Tối ưu trò chơi với gần 1000 các mảnh trang phục từ Spine Animation, xây dựng hệ thống UIUX đồ sộ của game.</li>
+                    <li style="margin-bottom:8px;">Xử lý thành thạo tương tác animation, event, skin... trên Spine Animation.</li>
+                </em>
+         <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:12px;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                <iframe src="https://www.youtube.com/embed/rpzn2x3hcd0?si=o3PUSYvMOy7qnmkk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;"></iframe>
+              </div>
+                <a href="https://play.google.com/store/apps/details?id=com.avatarlife.avatarstory.mystory.myworld.mywonder" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+          </div>
+          <p>&nbsp;</p>
+          <!-- SweetRoom -->
+           <div class="project-card p-4 mb-3 bg-dark" id="project5">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Sweet Room 3D
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-12">
+                  <img src="img/Room1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Room2.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Room3.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Room4.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Room5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Room6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                 <div class="col-4">
+                  <img src="img/Room7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Một trò chơi sắp xếp đồ đạc trong nhà, mang tính giải đố, thư giãn...</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Là một trong hai Developer chính của game, phụ trách lập trình các tính năng di chuyển và sắp xếp đồ đạc.</li>
+                    <li style="margin-bottom:8px;">Xử lý các thành phần đồ họa 3D, shader, ánh sáng, FX...để tạo ra màu sắc và trải nghiệm mượt mà nhất.</li>
+                    <li style="margin-bottom:8px;">Tối ứu hóa trò chơi để hoạt động tốt với số lượng lớn các đồ nội thất và vật dụng có trong game.</li>
+                </em>
+
+                <a href="https://play.google.com/store/apps/details?id=com.sweetroom3d.unpack.decor.makeover" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+          </div>
+          <!-- Thêm các project khác tại đây -->
+        </div>
+         <div class="portfolio-container">
+          <section id="gioithieu2">
+            <h1>Những dự án khác</h1>
+            <p>Tiếp theo là những dự án nhỏ hơn, thường là các casual game hoặc các ứng dụng nhỏ lẻ.</p>
+            
+              <p>&nbsp;</p>
+          </section>
+                  <!-- OldFlame -->
+           <div class="project-card p-4 mb-3 bg-dark" id="OldFlame">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                OldFlame
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <img src="img/OldFlame2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/OldFlame3.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/OldFlame4.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/OldFlame5.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/OldFlame1.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/OldFlame6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Phiên bản tiền nhiệm của WhiteFlame: The Hunter, một trò chơi Action RPG với thế giới mở và hệ thống soul like hấp dẫn</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Là một trong những trò chơi đầu tiên phát triển.</li>
+                    <li style="margin-bottom:8px;">Đạt gần 100k lượt tải mà không qua marketing.</li>
+                    <li style="margin-bottom:8px;">Tham khảo các bài báo dưới đây:</li>
+
+                      <div style="margin-bottom:8px;">
+                        <a href="https://motgame.vn/danh-gia-whiteflame-khi-nguoi-viet-lam-game-kho-tren-di-dong-12274.html" target="_blank" rel="noopener" style="color:#f8f9fa;text-decoration:underline;font-size:0.8em;">
+                          Đánh giá WhiteFlame: Khi người Việt làm “game khó” trên di động.
+                        </a>
+                      </div>
+                      <div style="margin-bottom:8px;">
+                        <a href="https://www.xemgame.com/gioi-thieu-whiteflame-post341674.html" target="_blank" rel="noopener" style="color:#f8f9fa;text-decoration:underline;font-size:0.8em;">
+                          WhiteFlame – game RPG do người Việt phát triển nhìn đơn giản nhưng lối chơi lại cực chuyên sâu.
+                        </a>
+                      </div>
+                      <div style="margin-bottom:8px;">
+                        <a href="https://www.techrum.vn/threads/android-m%E1%BB%9Bi-ch%C6%A1i-th%E1%BB%AD-whiteflame-game-th%C3%BA-v%E1%BB%8B-ng%C6%B0%E1%BB%9Di-vi%E1%BB%87t-s%E1%BA%A3n-xu%E1%BA%A5t-v%E1%BB%ABa-xu%E1%BA%A5t-hi%E1%BB%87n-tr%C3%AAn-google-play.303389/" target="_blank" rel="noopener" style="color:#f8f9fa;text-decoration:underline;font-size:0.8em;">
+                          Mời chơi thử WhiteFlame - game thú vị người Việt sản xuất vừa xuất hiện trên Google Play
+                        </a>
+                      </div>
+         <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:12px;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                <iframe src="https://www.youtube.com/embed/14b3MXbfhB0?si=dZLsxzvuOXOyj0cz" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;"></iframe>
+              </div>
+                <a href="https://play.google.com/store/apps/details?id=com.PYZ.WhiteFlame" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+          </div>
+          <p>&nbsp;</p>
+      <!-- Go Up -->
+          <div class="project-card p-4 mb-3 bg-dark" id="GoUp">
+            <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Go Up 3D
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <img src="img/GoUp1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Gif1.gif" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Gif2.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Gif3.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Gif4.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Gif5.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Một trò chơi parkour với mục đích là trèo lên cao nhất có thể.</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Khả năng di chuyển và leo trèo linh hoạt trong không gian 3D.</li>
+                    <li style="margin-bottom:8px;">Tối ưu tốt với map cực lớn và số lượng vật thể, địa hình đồ sộ.</li>
+                </em>
+            </ul>
+            </ul>             
+              <p>&nbsp;</p>
               
+          </div>
+
+          <p>&nbsp;</p>
+
+        <!-- Dop -->
+           <div class="project-card p-4 mb-3 bg-dark" id="DOP">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                DOP Ban - Delete One Part
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-4">
+                  <img src="img/Dop1.gif" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Dop2.gif" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Dop3.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Dop4.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Dop5.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Dop6.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Game giải đố dạng xóa một phần bức tranh để giải quyết vấn đề của từng màn chơi.</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Xử lý cơ chế xóa hình.</li>
+                    <li style="margin-bottom:8px;">Phân nhánh các trường hợp xảy ra khi xóa các đối tượng khác nhau trong level.</li>
+                </em>
+            </ul>
+            </ul>             
+              
+            <a href="https://play.google.com/store/apps/details?id=com.dopban.chooban.deleteonepart" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+          </div>
+
+                    <p>&nbsp;</p>
+
+        <!-- DressUp -->
+           <div class="project-card p-4 mb-3 bg-dark" id="DressUp">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Fashion Stylish Makeup DressUp
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-12">
+                  <img src="img/Fashion.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion3.jpg" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion5.jpg" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion6.jpg" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion9.jpg" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/Fashion8.jpg" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Trò chơi thời trang với tính đối kháng, giành điểm cao hơn đối phương trong các cuộc trình diễn thời trang để chiến thắng.</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Rất nhiều trang phục, tóc, và các phụ kiện thời trang khác.</li>
+                    <li style="margin-bottom:8px;">Có chế độ trang điểm khá chi tiết, có thể tô son, kẻ mi, vẽ mắt...</li>
+                </em>
+              <a href="https://play.google.com/store/apps/details?id=com.fashion.stylish.makeup.dressup.puzzle" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+
+          </div>
+          <p>&nbsp;</p>
+               <!-- Cat  -->
+           <div class="project-card p-4 mb-3 bg-dark" id="Cat">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Cat Run - Kitty Rush
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-12">
+                  <img src="img/Cat1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat4.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat6.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-4">
+                  <img src="img/cat3.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Idle game với nhân vật là một chú mèo đáng yêu với hành trình tập luyện để chạy đua với các đối thủ khác.</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Cơ chế Idle game cơ bản, nâng cấp tăng dần các chỉ số để tiến triển xa hơn trong trò chơi.</li>
+                    <li style="margin-bottom:8px;">Hệ thống trang bị, skin, và achievement đầy đủ.</li>
+                </em>
+              <a href="https://play.google.com/store/apps/details?id=com.catrun.kittyrush.petrunner" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+
+          </div>
+          <p>&nbsp;</p>
+                         <!-- Fish  -->
+           <div class="project-card p-4 mb-3 bg-dark" id="Fish">
+             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
+                Super Fish.IO
+            </h4>
+             <p>&nbsp;</p>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <img src="img/Fish1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish3.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish4.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish5.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish6.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+                <div class="col-6">
+                  <img src="img/Fish8.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                </div>
+              </div>
+                <p>&nbsp;</p>
+              <p style="color:#f8f9fa;">Một game dạng IO, điều khiển chú cá của mình để đánh bại những sinh vật khác và sinh tồn giữa biển khơi.</p>
+            <ul style="color:#f8f9fa; font-size:0.97em;">
+                <em>
+                    <li style="margin-bottom:8px;">Tương tác tấn công giữa các con cá.</li>
+                    <li style="margin-bottom:8px;">Hệ thống nhân vật và trang bị hấp dẫn.</li>
+                </em>
+              <a href="https://play.google.com/store/apps/details?id=com.fishio.hunt.whitedot.fish" class="btn btn-primary btn-sm" target="_blank" rel="noopener"> <i class="fa-brands fa-google-play"></i> CH Play</a>
+
+          </div>
+          <p>&nbsp;</p>
           <!-- Thêm các project khác tại đây -->
         </div>
       </main>
