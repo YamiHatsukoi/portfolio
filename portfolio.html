@@ -4,63 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio - Đạt Mạnh</title>
+  <meta name="description" content="Portfolio của Đạt Mạnh — Game Developer Unity với 13+ game mobile đã phát hành.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     body {
-      background: linear-gradient(135deg, #232946 0%, #394867 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
       min-height: 100vh;
     }
     .portfolio-container {
-      background: #f5f7fa;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(44,62,80,0.10);
-      padding: 36px 18px;
-      margin: 40px auto;
-      max-width: 900px;
+      background: #dbeafe;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 36px 28px;
+      margin: 32px auto 40px;
+      max-width: 920px;
     }
     h1 {
-      color: #217dbb;
+      color: var(--text-primary);
       font-weight: 700;
-      margin-bottom: 28px;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 8px rgba(52,152,219,0.08);
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
     }
+    .section-lead {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 28px;
+    }
+    /* Project cards */
     .project-card {
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-      margin-bottom: 22px;
-      background: #eceff1;
-      transition: box-shadow 0.2s, transform 0.2s;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      overflow: hidden;
     }
     .project-card:hover {
-      box-shadow: 0 6px 24px rgba(44,62,80,0.14);
-      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 8px 32px rgba(3,105,161,0.13);
+      transform: translateY(-4px);
+      border-color: #bae6fd;
     }
     .project-title {
-      color: #217dbb;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: #0f172a;
+      font-weight: 800;
+      font-size: 1.35rem !important;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* kéo ra ngoài padding p-4 của card (1.5rem) để full width */
+      margin: -1.5rem -1.5rem 1.25rem -1.5rem;
+      padding: 1.25rem 1.5rem;
     }
+    /* Badges */
+    .badge-featured {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0369a1, #06b6d4);
+      color: #fff;
+      font-size: 0.68rem;
+      flex-shrink: 0;
+    }
+    .genre-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.73rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    .genre-rpg     { background: #fce7f3; color: #9d174d; }
+    .genre-action  { background: #fee2e2; color: #991b1b; }
+    .genre-online  { background: #dbeafe; color: #1d4ed8; }
+    .genre-sim     { background: #d1fae5; color: #065f46; }
+    .genre-puzzle  { background: #e0f2fe; color: #6d28d9; }
+    .genre-casual  { background: #fef3c7; color: #b45309; }
+    .genre-idle    { background: #e0f2fe; color: #0369a1; }
+    /* Card images */
+    .card-img { border-radius: 8px; box-shadow: var(--shadow-sm); }
+    /* Sidebar */
     .sidebar {
-      min-width: 220px;
+      min-width: 200px;
       z-index: 100;
-      background: linear-gradient(135deg, #cfd8dc 0%, #e3eaf2 100%);
-      box-shadow: 0 2px 12px rgba(44,62,80,0.08);
-      border-right: 1px solid #cfd8dc;
+      background: var(--surface);
+      box-shadow: 2px 0 16px rgba(0,0,0,0.06);
+      border-right: 1px solid var(--border);
+    }
+    .sidebar h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0369a1;
+      padding: 0 16px;
+      margin-bottom: 8px;
     }
     .sidebar .nav-link {
-      color: #294a6d;
+      color: var(--text-secondary);
+      font-size: 0.87rem;
       font-weight: 500;
       border-radius: 8px;
-      margin-bottom: 6px;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      padding: 10px 18px;
+      margin-bottom: 2px;
+      transition: background 0.18s, color 0.18s;
+      padding: 7px 14px;
     }
-    .sidebar .nav-link:hover, .sidebar .nav-link.active {
-      background: #e3eaf2;
-      color: #294a6d;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    .sidebar .nav-link:hover {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .sidebar .nav-link.active {
+      background: #0369a1;
+      color: #fff;
+    }
+    .sidebar .nav-section {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-secondary);
+      padding: 12px 14px 4px;
+      margin-top: 4px;
     }
     @media (max-width: 768px) {
       #sidebar { width: 220px; }
@@ -73,37 +151,32 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar mục lục -->
-  <nav id="sidebar" class="col-md-3 col-lg-2 bg-white sidebar position-fixed vh-100 overflow-auto" style="border-right:1px solid #eee; box-shadow:0 2px 12px rgba(52,152,219,0.04); left:0; top:0; transition:left 0.3s;">
-    <div class="sidebar-sticky pt-4">
-      <h4 class="text-center" style="color:#3498db; font-weight:700;">Mục lục <button id="closeSidebar" class="btn btn-sm btn-light float-end d-md-none"><i class="fa-solid fa-xmark"></i></button></h4>
-      <ul class="nav flex-column mt-3" style="gap: 2px;"></ul>
-        <li class="nav-item">
-          <a class="nav-link" style="color:#002c31;font-size:1rem;text-decoration:underline;text-underline-offset:4px;font-weight:600;" href="#gioithieu">
-        <i class="fa-solid fa-user"></i> <span style="margin-left:7px;">Các dự án nổi bật</span>
-          </a>
-        </li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project1"><i class="fa-solid fa-fire-flame-curved"></i> <span style="margin-left:7px;">WhiteFlame</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project2"><i class="fa-solid fa-water"></i> <span style="margin-left:7px;">OverBlue</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project3"><i class="fa-solid fa-tv"></i> <span style="margin-left:7px;">MixiShow</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project4"><i class="fa-solid fa-user-astronaut"></i> <span style="margin-left:7px;">Avatar Life World</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#project5"><i class="fa-solid fa-couch"></i> <span style="margin-left:7px;">Sweet Room 3D</span></a></li>
-        <li class="nav-item">
-          <a class="nav-link" style="color:#002c31;font-size:1rem;text-decoration:underline;text-underline-offset:4px;font-weight:600;" href="#gioithieu2">
-        <i class="fa-solid fa-user"></i> <span style="margin-left:7px;">Những dự án khác</span>
-          </a>
-        </li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#OldFlame"><i class="fa-solid fa-fire"></i> <span style="margin-left:7px;">OldFlame</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#GoUp"><i class="fa-solid fa-arrow-up"></i> <span style="margin-left:7px;">Go Up 3D</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#DOP"><i class="fa-solid fa-eraser"></i> <span style="margin-left:7px;">DOP Ban</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#DressUp"><i class="fa-solid fa-shirt"></i> <span style="margin-left:7px;">Fashion Stylish</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Cat"><i class="fa-solid fa-cat"></i> <span style="margin-left:7px;">Cat Run</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Fish"><i class="fa-solid fa-fish"></i> <span style="margin-left:7px;">Super Fish.IO</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Thread"><i class="fa-solid fa-image"></i> <span style="margin-left:7px;">Thread Joy</span></a></li>
-        <li class="nav-item"><a class="nav-link" style="font-size:1rem;" href="#Gecko"><i class="fa-solid fa-gamepad"></i> <span style="margin-left:7px;">Gecko Out</span></a></li>
+  <nav id="sidebar" class="col-md-3 col-lg-2 bg-white sidebar position-fixed vh-100 overflow-auto" style="left:0; top:0; transition:left 0.3s;">
+    <div class="sidebar-sticky pt-4 pb-4 px-2">
+      <div class="d-flex align-items-center justify-content-between px-2 mb-3">
+        <span style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0369a1;">Portfolio</span>
+        <button id="closeSidebar" class="btn btn-sm btn-light d-md-none"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ul class="nav flex-column">
+        <div class="nav-section">Nổi bật</div>
+        <li class="nav-item"><a class="nav-link" href="#project1"><i class="fa-solid fa-fire-flame-curved"></i> WhiteFlame</a></li>
+        <li class="nav-item"><a class="nav-link" href="#project2"><i class="fa-solid fa-water"></i> OverBlue</a></li>
+        <li class="nav-item"><a class="nav-link" href="#project3"><i class="fa-solid fa-tv"></i> MixiShow</a></li>
+        <li class="nav-item"><a class="nav-link" href="#project4"><i class="fa-solid fa-user-astronaut"></i> Avatar Life World</a></li>
+        <li class="nav-item"><a class="nav-link" href="#project5"><i class="fa-solid fa-couch"></i> Sweet Room 3D</a></li>
+        <div class="nav-section">Dự án khác</div>
+        <li class="nav-item"><a class="nav-link" href="#OldFlame"><i class="fa-solid fa-fire"></i> OldFlame</a></li>
+        <li class="nav-item"><a class="nav-link" href="#GoUp"><i class="fa-solid fa-arrow-up"></i> Go Up 3D</a></li>
+        <li class="nav-item"><a class="nav-link" href="#DOP"><i class="fa-solid fa-eraser"></i> DOP Ban</a></li>
+        <li class="nav-item"><a class="nav-link" href="#DressUp"><i class="fa-solid fa-shirt"></i> Fashion Stylish</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Cat"><i class="fa-solid fa-cat"></i> Cat Run</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Fish"><i class="fa-solid fa-fish"></i> Super Fish.IO</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Thread"><i class="fa-solid fa-image"></i> Thread Joy</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Gecko"><i class="fa-solid fa-gamepad"></i> Gecko Rush</a></li>
       </ul>
-        <!-- Thêm các mục khác tại đây -->
-      </ul>
-      <a href="index.html" class="btn btn-outline-primary mt-4 w-100"><i class="fa-solid fa-arrow-left"></i> Quay về CV</a>
+      <div class="px-2 mt-4">
+        <a href="index.html" class="btn btn-outline-primary w-100" style="font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Quay về CV</a>
+      </div>
     </div>
   </nav>
       <!-- Nội dung portfolio -->
@@ -111,40 +184,41 @@
         <div class="portfolio-container">
           <section id="gioithieu">
             <h1>Các dự án nổi bật</h1>
-            <p>Dưới đây chỉ là những dự án chính, nổi bật, trong số rất nhiều dự án mình đã từng tham gia.</p>
-            
-              <p>&nbsp;</p>
+            <p class="section-lead">Dưới đây là những dự án chính, nổi bật trong số rất nhiều dự án mình đã từng tham gia.</p>
           </section>
           
       <!-- WhiteFlame 2 -->
-          <div class="project-card p-4 mb-3 bg-dark" id="project1">
-            <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                WhiteFlame: The Hunter
+          <div class="project-card p-4 mb-3 reveal" id="project1">
+            <h4 class="project-title">
+                <span class="badge-featured"><i class="fa-solid fa-star"></i></span>WhiteFlame: The Hunter
             </h4>
-             <p>&nbsp;</p>
+            <div class="mb-3">
+              <span class="genre-badge genre-rpg"><i class="fa-solid fa-swords"></i> Action RPG</span>
+              <span class="genre-badge genre-action"><i class="fa-solid fa-globe"></i> Open World</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/WF1.png" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF1.png" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/WF.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/WF4.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF4.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/WF5.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF5.png" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/WF1.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF1.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/WF2.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/WF2.gif" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một game Action RPG với thế giới mở rộng lớn. Với bối cảnh fantasy và một cốt truyện kéo dài 20h chơi game.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một game Action RPG với thế giới mở rộng lớn. Với bối cảnh fantasy và một cốt truyện kéo dài 20h chơi game.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là Developer chính của game, thâu tóm toàn bộ từ lập trình đến xây dựng thế giới, cốt truyện và gần như tất cả các mảng khác.</li>
                     <li style="margin-bottom:8px;">Xử lý animation và tối ưu đồ họa 3D cho thế giới mở.</li>
@@ -162,34 +236,37 @@
           <p>&nbsp;</p>
 
         <!-- OverBlue -->
-           <div class="project-card p-4 mb-3 bg-dark" id="project2">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                OverBlue
+           <div class="project-card p-4 mb-3 reveal" id="project2">
+             <h4 class="project-title">
+                <span class="badge-featured"><i class="fa-solid fa-star"></i></span>OverBlue
             </h4>
-             <p>&nbsp;</p>
+            <div class="mb-3">
+              <span class="genre-badge genre-rpg"><i class="fa-solid fa-shield-halved"></i> Survival RPG</span>
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-hammer"></i> Crafting</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/OB1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB1.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OB2.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB2.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OB3.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB3.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OB4.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB4.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OB.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OB2.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OB2.gif" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một game RPG sinh tồn, người chơi có thể tùy ý xây dựng, nấu nướng, chế tạo vô số đồ, trang bị, và đánh bại những con boss mạnh mẽ.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một game RPG sinh tồn, người chơi có thể tùy ý xây dựng, nấu nướng, chế tạo vô số đồ, trang bị, và đánh bại những con boss mạnh mẽ.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là Developer chính của game, lập trình cho hầu hết tính năng trong game.</li>
                     <li style="margin-bottom:8px;">Nghiên cứu và xử lý một hệ thống phức tạp bao gồm chế tạo, rương chứa, vật phẩm dựa trên nặng, trang bị, nguyên tố...</li>
@@ -206,34 +283,37 @@
                     <p>&nbsp;</p>
 
         <!-- MixiShow -->
-           <div class="project-card p-4 mb-3 bg-dark" id="project3">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                MixiShow
+           <div class="project-card p-4 mb-3 reveal" id="project3">
+             <h4 class="project-title">
+                <span class="badge-featured"><i class="fa-solid fa-star"></i></span>MixiShow
             </h4>
-             <p>&nbsp;</p>
+            <div class="mb-3">
+              <span class="genre-badge genre-online"><i class="fa-solid fa-wifi"></i> Online Real-time</span>
+              <span class="genre-badge genre-sim"><i class="fa-solid fa-tv"></i> Game Show</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/Mixi.png" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi.png" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Mixi1.png" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi1.png" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Mixi2.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi2.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Mixi3.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi3.png" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Mixi4.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi4.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Mixi5.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Mixi5.png" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một game show ảo có thể tương tác online realtime, có nhiều tính năng và trò chơi phụ ở trong.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một game show ảo có thể tương tác online realtime, có nhiều tính năng và trò chơi phụ ở trong.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là một trong hai Developer chính của game, phụ trách lập trình các tính năng điều khiển và đồng bộ online trong game.</li>
                     <li style="margin-bottom:8px;">Xử lý đồng bộ qua Photon và dựng database trên Firebase Firestore.</li>
@@ -245,34 +325,37 @@
           </div>
           <p>&nbsp;</p>
         <!-- Avatar -->
-           <div class="project-card p-4 mb-3 bg-dark" id="project4">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Avatar Life World: My Story
+           <div class="project-card p-4 mb-3 reveal" id="project4">
+             <h4 class="project-title">
+                <span class="badge-featured"><i class="fa-solid fa-star"></i></span>Avatar Life World: My Story
             </h4>
-             <p>&nbsp;</p>
+            <div class="mb-3">
+              <span class="genre-badge genre-sim"><i class="fa-solid fa-user-astronaut"></i> Life Simulation</span>
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-shirt"></i> Avatar</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/Avatar1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar1.jpg" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Avatar7.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar7.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Avatar3.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar3.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Avatar4.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar4.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Avatar5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar5.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Avatar6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Avatar6.webp" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một trò chơi mở với rất nhiều tính năng và sân chơi bên trong. Bao gồm rất nhiều animation, tương tác đồ vật, thay đổi giữa hàng trăm trang phục, tự mua và sắp xếp đồ đạc bên trong nhà...</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một trò chơi mở với rất nhiều tính năng và sân chơi bên trong. Bao gồm rất nhiều animation, tương tác đồ vật, thay đổi giữa hàng trăm trang phục, tự mua và sắp xếp đồ đạc bên trong nhà...</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là một trong hai Developer chính của game, phụ trách lập trình các tính năng tương tác animation, thay đổi trang phục, và xử lý logic UI, service.</li>
                     <li style="margin-bottom:8px;">Tối ưu trò chơi với gần 1000 các mảnh trang phục từ Spine Animation, xây dựng hệ thống UIUX đồ sộ của game.</li>
@@ -285,37 +368,40 @@
           </div>
           <p>&nbsp;</p>
           <!-- SweetRoom -->
-           <div class="project-card p-4 mb-3 bg-dark" id="project5">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Sweet Room 3D
+           <div class="project-card p-4 mb-3 reveal" id="project5">
+             <h4 class="project-title">
+                <span class="badge-featured"><i class="fa-solid fa-star"></i></span>Sweet Room 3D
             </h4>
-             <p>&nbsp;</p>
+            <div class="mb-3">
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-couch"></i> Decoration Puzzle</span>
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-spa"></i> Relaxing</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-12">
-                  <img src="img/Room1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room1.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Room2.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room2.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Room3.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room3.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Room4.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room4.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Room5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room5.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Room6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room6.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                  <div class="col-4">
-                  <img src="img/Room7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Room7.webp" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một trò chơi sắp xếp đồ đạc trong nhà, mang tính giải đố, thư giãn...</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một trò chơi sắp xếp đồ đạc trong nhà, mang tính giải đố, thư giãn...</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là một trong hai Developer chính của game, phụ trách lập trình các tính năng di chuyển và sắp xếp đồ đạc.</li>
                     <li style="margin-bottom:8px;">Xử lý các thành phần đồ họa 3D, shader, ánh sáng, FX...để tạo ra màu sắc và trải nghiệm mượt mà nhất.</li>
@@ -329,39 +415,38 @@
          <div class="portfolio-container">
           <section id="gioithieu2">
             <h1>Những dự án khác</h1>
-            <p>Tiếp theo là những dự án nhỏ hơn, thường là các casual game hoặc các ứng dụng nhỏ lẻ.</p>
-            
-              <p>&nbsp;</p>
+            <p class="section-lead">Những casual game và dự án nhỏ hơn đã tham gia phát triển.</p>
           </section>
                   <!-- OldFlame -->
-           <div class="project-card p-4 mb-3 bg-dark" id="OldFlame">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                OldFlame
-            </h4>
-             <p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="OldFlame">
+             <h4 class="project-title">OldFlame</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-rpg"><i class="fa-solid fa-swords"></i> Action RPG</span>
+              <span class="genre-badge genre-action"><i class="fa-solid fa-skull"></i> Soul-like</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/OldFlame2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame2.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OldFlame3.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame3.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OldFlame4.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame4.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OldFlame5.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame5.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OldFlame1.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame1.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/OldFlame6.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/OldFlame6.webp" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Phiên bản tiền nhiệm của WhiteFlame: The Hunter, một trò chơi Action RPG với thế giới mở và hệ thống soul like hấp dẫn</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Phiên bản tiền nhiệm của WhiteFlame: The Hunter, một trò chơi Action RPG với thế giới mở và hệ thống soul like hấp dẫn</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Là một trong những trò chơi đầu tiên phát triển.</li>
                     <li style="margin-bottom:8px;">Đạt gần 100k lượt tải mà không qua marketing.</li>
@@ -389,34 +474,35 @@
           </div>
           <p>&nbsp;</p>
       <!-- Go Up -->
-          <div class="project-card p-4 mb-3 bg-dark" id="GoUp">
-            <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Go Up 3D
-            </h4>
-             <p>&nbsp;</p>
+          <div class="project-card p-4 mb-3 reveal" id="GoUp">
+            <h4 class="project-title">Go Up 3D</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-action"><i class="fa-solid fa-person-running"></i> Parkour</span>
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-cube"></i> 3D</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/GoUp1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/GoUp1.jpg" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Gif1.gif" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gif1.gif" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Gif2.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gif2.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Gif3.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gif3.gif" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Gif4.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gif4.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Gif5.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gif5.gif" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một trò chơi parkour với mục đích là trèo lên cao nhất có thể.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một trò chơi parkour với mục đích là trèo lên cao nhất có thể.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Khả năng di chuyển và leo trèo linh hoạt trong không gian 3D.</li>
                     <li style="margin-bottom:8px;">Tối ưu tốt với map cực lớn và số lượng vật thể, địa hình đồ sộ.</li>
@@ -430,34 +516,34 @@
           <p>&nbsp;</p>
 
         <!-- Dop -->
-           <div class="project-card p-4 mb-3 bg-dark" id="DOP">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                DOP Ban - Delete One Part
-            </h4>
-             <p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="DOP">
+             <h4 class="project-title">DOP Ban - Delete One Part</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-eraser"></i> Puzzle</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-4">
-                  <img src="img/Dop1.gif" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop1.gif" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Dop2.gif" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop2.gif" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Dop3.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop3.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Dop4.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop4.gif" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Dop5.gif" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop5.gif" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Dop6.gif" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Dop6.gif" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Game giải đố dạng xóa một phần bức tranh để giải quyết vấn đề của từng màn chơi.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Game giải đố dạng xóa một phần bức tranh để giải quyết vấn đề của từng màn chơi.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Xử lý cơ chế xóa hình.</li>
                     <li style="margin-bottom:8px;">Phân nhánh các trường hợp xảy ra khi xóa các đối tượng khác nhau trong level.</li>
@@ -471,37 +557,38 @@
                     <p>&nbsp;</p>
 
         <!-- DressUp -->
-           <div class="project-card p-4 mb-3 bg-dark" id="DressUp">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Fashion Stylish Makeup DressUp
-            </h4>
-             <p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="DressUp">
+             <h4 class="project-title">Fashion Stylish Makeup DressUp</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-shirt"></i> Fashion</span>
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-trophy"></i> Competition</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-12">
-                  <img src="img/Fashion.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion1.jpg" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion1.jpg" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion3.jpg" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion3.jpg" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion5.jpg" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion5.jpg" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion6.jpg" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion6.jpg" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion9.jpg" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion9.jpg" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Fashion8.jpg" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fashion8.jpg" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Trò chơi thời trang với tính đối kháng, giành điểm cao hơn đối phương trong các cuộc trình diễn thời trang để chiến thắng.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Trò chơi thời trang với tính đối kháng, giành điểm cao hơn đối phương trong các cuộc trình diễn thời trang để chiến thắng.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Rất nhiều trang phục, tóc, và các phụ kiện thời trang khác.</li>
                     <li style="margin-bottom:8px;">Có chế độ trang điểm khá chi tiết, có thể tô son, kẻ mi, vẽ mắt...</li>
@@ -511,37 +598,38 @@
           </div>
           <p>&nbsp;</p>
                <!-- Cat  -->
-           <div class="project-card p-4 mb-3 bg-dark" id="Cat">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Cat Run - Kitty Rush
-            </h4>
-             <p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="Cat">
+             <h4 class="project-title">Cat Run - Kitty Rush</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-idle"><i class="fa-solid fa-clock"></i> Idle</span>
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-cat"></i> Runner</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-12">
-                  <img src="img/Cat1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Cat1.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/cat2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/cat2.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Cat4.png" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Cat4.png" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/cat6.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/cat6.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/cat7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/cat7.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/cat5.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/cat5.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/cat3.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/cat3.webp" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Idle game với nhân vật là một chú mèo đáng yêu với hành trình tập luyện để chạy đua với các đối thủ khác.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Idle game với nhân vật là một chú mèo đáng yêu với hành trình tập luyện để chạy đua với các đối thủ khác.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Cơ chế Idle game cơ bản, nâng cấp tăng dần các chỉ số để tiến triển xa hơn trong trò chơi.</li>
                     <li style="margin-bottom:8px;">Hệ thống trang bị, skin, và achievement đầy đủ.</li>
@@ -551,40 +639,41 @@
           </div>
           <p>&nbsp;</p>
                          <!-- Fish  -->
-           <div class="project-card p-4 mb-3 bg-dark" id="Fish">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Super Fish.IO
-            </h4>
-             <p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="Fish">
+             <h4 class="project-title">Super Fish.IO</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-action"><i class="fa-solid fa-fish"></i> IO Game</span>
+              <span class="genre-badge genre-online"><i class="fa-solid fa-bolt"></i> Action</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <img src="img/Fish1.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish1.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish2.webp" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish2.webp" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish3.webp" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish3.webp" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish4.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish4.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish5.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish5.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish6.webp" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish6.webp" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish7.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish7.webp" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-6">
-                  <img src="img/Fish8.webp" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Fish8.webp" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Một game dạng IO, điều khiển chú cá của mình để đánh bại những sinh vật khác và sinh tồn giữa biển khơi.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Một game dạng IO, điều khiển chú cá của mình để đánh bại những sinh vật khác và sinh tồn giữa biển khơi.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Tương tác tấn công va chạm giữa các con cá.</li>
                     <li style="margin-bottom:8px;">Hệ thống nhân vật và trang bị hấp dẫn.</li>
@@ -595,37 +684,38 @@
           </div>
           <p>&nbsp;</p>            
            <!-- Fish  -->
-           <div class="project-card p-4 mb-3 bg-dark" id="Thread">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Thread Joy 3D - Untangle Ropes
-            </h4>
-<p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="Thread">
+             <h4 class="project-title">Thread Joy 3D - Untangle Ropes</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-circle-nodes"></i> Puzzle</span>
+              <span class="genre-badge genre-casual"><i class="fa-solid fa-spa"></i> Relaxing</span>
+            </div>
               <div class="row g-2 mb-3">
                 <div class="col-12">
-                  <img src="img/Thread0.png" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread0.png" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread1.png" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread1.png" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread2.png" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread2.png" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread3.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread3.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread4.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread4.png" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread5.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread5.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Thread6.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Thread6.png" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Trò chơi giải đố 3D thú vị tạo ra sự thư giãn khi gỡ rối các cuộn len và tạo lên những bức tranh thêu tuyệt đẹp.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Trò chơi giải đố 3D thú vị tạo ra sự thư giãn khi gỡ rối các cuộn len và tạo lên những bức tranh thêu tuyệt đẹp.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Hệ thống giải đố kết hợp girdbase phần dưới và logic vẽ tranh phần trên màn hình.</li>
                     <li style="margin-bottom:8px;">Level khó dần với các obstacle đa dạng.</li>
@@ -635,11 +725,12 @@
 
           </div>
           <p>&nbsp;</p>           <!-- Fish  -->
-           <div class="project-card p-4 mb-3 bg-dark" id="Gecko">
-             <h4 class="project-title text-light" style="font-size:1.5rem; font-weight:700; letter-spacing:1px; text-shadow:0 2px 8px rgba(52,152,219,0.15); margin-bottom:10px;">
-                Gecko Rush
-            </h4>
-<p>&nbsp;</p>
+           <div class="project-card p-4 mb-3 reveal" id="Gecko">
+             <h4 class="project-title">Gecko Rush</h4>
+            <div class="mb-3">
+              <span class="genre-badge genre-puzzle"><i class="fa-solid fa-table-cells"></i> Grid Puzzle</span>
+              <span class="genre-badge genre-action"><i class="fa-solid fa-bolt"></i> Escape</span>
+            </div>
               <div class="row g-2 mb-3">
                 
            <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:12px;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
@@ -647,27 +738,27 @@
               </div>
 
                 <div class="col-4">
-                  <img src="img/Gecko1.png" alt="WF1" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko1.png" alt="WF1" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Gecko2.png" alt="WF3" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko2.png" alt="WF3" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Gecko3.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko3.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Gecko4.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko4.png" alt="WF5" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Gecko5.png" alt="WF4" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko5.png" alt="WF4" class="img-fluid card-img">
                 </div>
                 <div class="col-4">
-                  <img src="img/Gecko6.png" alt="WF5" class="img-fluid" style="border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.10);">
+                  <img src="img/Gecko6.png" alt="WF5" class="img-fluid card-img">
                 </div>
               </div>
                 <p>&nbsp;</p>
-              <p style="color:#f8f9fa;">Giải cứu những chú Gecko khỏi màn chơi, vượt qua nhiều chướng ngại vật và những thử thách thú vị.</p>
-            <ul style="color:#f8f9fa; font-size:0.97em;">
+              <p>Giải cứu những chú Gecko khỏi màn chơi, vượt qua nhiều chướng ngại vật và những thử thách thú vị.</p>
+            <ul style="font-size:0.9rem; color:#475569;"  >
                 <em>
                     <li style="margin-bottom:8px;">Hệ thống level gridbase và logic di chuyển mượt mà.</li>
                     <li style="margin-bottom:8px;">Level khó dần với các obstacle đa dạng.</li>
@@ -682,57 +773,7 @@
       </main>
     </div>
   </div>
-  <script>
-    // Sidebar toggle logic responsive
-    function setSidebarState() {
-      var sidebar = document.getElementById('sidebar');
-      var toggleBtn = document.getElementById('toggleSidebar');
-      var closeBtn = document.getElementById('closeSidebar');
-      if(window.innerWidth < 768) {
-        // Nếu sidebar đang mở thì giữ nguyên, nếu chưa thì ẩn
-        if(!sidebar.classList.contains('sidebar-open')) {
-          sidebar.style.left = '-250px';
-        }
-        toggleBtn.style.display = 'block';
-        if(closeBtn) closeBtn.style.display = 'block';
-      } else {
-        sidebar.style.left = '0';
-        sidebar.classList.remove('sidebar-open');
-        toggleBtn.style.display = 'none';
-        if(closeBtn) closeBtn.style.display = 'none';
-      }
-    }
-    window.addEventListener('resize', setSidebarState);
-    window.addEventListener('DOMContentLoaded', setSidebarState);
-    document.getElementById('toggleSidebar').onclick = function() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.style.left = '0';
-      sidebar.classList.add('sidebar-open');
-    };
-    document.getElementById('closeSidebar').onclick = function() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.style.left = '-250px';
-      sidebar.classList.remove('sidebar-open');
-    };
-
-    // Tự động phát/dừng video khi cuộn đến/qua
-    document.addEventListener('DOMContentLoaded', function() {
-      var videos = document.querySelectorAll('.demo-video');
-      var observer = new window.IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if(entry.isIntersecting) {
-            entry.target.play();
-          } else {
-            entry.target.pause();
-          }
-        });
-      }, { threshold: 0.5 });
-      videos.forEach(function(video) {
-        observer.observe(video);
-      });
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
